@@ -23,14 +23,10 @@
   <script>
     function handleSubmit(event) {
       event.preventDefault();
-      const formData = new FormData(event.target);
-      const message = formData.get('message');
-      console.log('message: ', message)
-
-      const chatDiv = document.getElementById('chat');
+      const message = new FormData(event.target).get('message');
       const newMessage = document.createElement('p');
       newMessage.innerHTML = `<strong>User:</strong> ${message}`;
-      chatDiv.appendChild(newMessage);
+      document.getElementById('chat').appendChild(newMessage);
     }
 
   </script>
